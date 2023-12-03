@@ -1,6 +1,7 @@
 import { Inter, Asap, Poppins } from 'next/font/google'
 import './globals.css'
-import mainHeader from '../app/components/headers/mainHeader'
+import Footer from './components/footers/footer'
+import Header from './components/headers/header'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -13,8 +14,9 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={inter.className}>
-        <mainHeader />
+        <Header />
         {children}
+        <Footer />
         </body>
     </html>
   )
