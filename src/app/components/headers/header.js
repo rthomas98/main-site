@@ -1,6 +1,7 @@
 'use client'
 
 import {Fragment, useState, React } from 'react';
+import Image from 'next/image'
 
 import { Dialog, Disclosure, Popover, Transition } from '@headlessui/react'
 import {
@@ -12,8 +13,13 @@ import {
   SquaresPlusIcon,
   XMarkIcon,
   DocumentChartBarIcon,
+  CodeBracketIcon,
+  CommandLineIcon,
+  ComputerDesktopIcon,
+  BugAntIcon,
+  ChartBarSquareIcon,
 } from '@heroicons/react/24/outline'
-import { ChevronDownIcon, PhoneIcon, PlayCircleIcon } from '@heroicons/react/20/solid'
+import { ChevronDownIcon, PhoneIcon, QuestionMarkCircleIcon, UserGroupIcon } from '@heroicons/react/20/solid'
 
 const company = [
   { name: 'About Us', href: '/company/about-us' },
@@ -23,42 +29,124 @@ const company = [
 ]
 
 const services = [
-  { name: 'IT consulting', description: 'Get a better understanding of your traffic', href: '#', icon: ChartPieIcon },
-  { name: 'Software engineering', description: 'Speak directly to your customers', href: '#', icon: CursorArrowRaysIcon },
-  { name: 'Application services', description: 'Your customers’ data will be safe and secure', href: '#', icon: FingerPrintIcon },
-  { name: 'Managed IT services', description: 'Connect with third-party tools', href: '#', icon: SquaresPlusIcon },
-  { name: 'Quality Assurance & Testing', description: 'Build strategic funnels that will convert', href: '#', icon: ArrowPathIcon },
-  { name: 'Maintenance & Support', description: 'Build strategic funnels that will convert', href: '#', icon: ArrowPathIcon },
+  { 
+    name: 'IT Consulting', 
+    description: 'Expert guidance to navigate and optimize your IT strategy and infrastructure.', 
+    href: '/services/it-consulting', 
+    icon: UserGroupIcon 
+  },
+  { 
+    name: 'Software engineering', 
+    description: 'Advanced engineering solutions to build robust and scalable software systems.', 
+    href: '/services/software-engineering', 
+    icon: CodeBracketIcon 
+  },
+  { 
+    name: 'Application services', 
+    description: 'Comprehensive services to develop, manage, and modernize applications.', 
+    href: '/services/application-services', 
+    icon: CommandLineIcon 
+  },
+  { 
+    name: 'Managed IT services', 
+    description: 'Reliable IT management and support for seamless business operations.', 
+    href: '/services/managed-it-services', 
+    icon: ComputerDesktopIcon 
+  },
+  { 
+    name: 'Quality Assurance & Testing', 
+    description: 'Integrating development and operations for faster, more efficient workflows.', 
+    href: '/services/quality-assurance-and-testing', 
+    icon: BugAntIcon 
+  },
+  { 
+    name: 'Maintenance & Support', 
+    description: 'Dedicated support and maintenance for ongoing operational efficiency.', 
+    href: '/services/maintenance-and-support', 
+    icon: ChartBarSquareIcon
+  },
 ]
 const callsToAction = [
-  { name: 'Watch demo', href: '#', icon: PlayCircleIcon },
-  { name: 'Contact sales', href: '#', icon: PhoneIcon },
+  { 
+    name: 'Have More Questions?', 
+    href: '/frequently-asked-questions', 
+    icon: QuestionMarkCircleIcon 
+  },
+  { 
+    name: 'Ready To Get Started', 
+    href: '/contact', 
+    icon: PhoneIcon 
+  },
 ]
 
 const solutions = [
   { 
-    name: 'Analytics', 
-    description: 'Get a better understanding of your traffic', 
-    href: '#', 
+    name: 'Software Development & Design', 
+    description: 'Crafting bespoke software and designs for modern business needs.', 
+    href: 'solutions/software-development-and-design', 
     icon: ChartPieIcon },
   {
-    name: 'Integrations',
-    description: 'Connect with third-party tools and find out expectations',
-    href: '#',
+    name: 'Custom Software Development',
+    description: 'Tailored software solutions to perfectly fit your unique business goals',
+    href: '/solutions/custom-software-development',
     icon: SquaresPlusIcon,
   },
   {
-    name: 'Engagement',
-    description: 'Speak directly to your customers with our engagement tool',
-    href: '#',
+    name: 'Front-End Development',
+    description: 'Creating visually stunning and user-friendly front-end interfaces.',
+    href: '/solutions/front-end-development',
     icon: CursorArrowRaysIcon,
   },
-  { name: 'Automations', description: 'Build strategic funnels that will convert', href: '#', icon: ArrowPathIcon },
-  { name: 'Security', description: "Your customers' data will be safe and secure", href: '#', icon: FingerPrintIcon },
+  { name: 'Back-End Development', 
+    description: 'Robust back-end systems for powerful and efficient application performance.', 
+    href: '/solutions/back-end-development', 
+    icon: ArrowPathIcon 
+  },
+  { name: 'Full-Stack Development', 
+    description: "Comprehensive development solutions, covering both front and back-end needs.", 
+    href: '/solutions/full-stack-development', 
+    icon: FingerPrintIcon 
+  },
   {
-    name: 'Reports',
-    description: 'Edit, manage and create newly informed decisions',
-    href: '#',
+    name: 'Web Application Development',
+    description: 'Building dynamic web applications for enhanced online user experiences',
+    href: '/solutions/web-application-development',
+    icon: DocumentChartBarIcon,
+  },
+  {
+    name: 'React Native Development',
+    description: 'Developing cross-platform mobile apps with seamless, native-like functionality.',
+    href: '/solutions/react-native-development',
+    icon: DocumentChartBarIcon,
+  },
+  {
+    name: 'UI/UX Design',
+    description: 'Designing intuitive and engaging user interfaces for digital platforms.',
+    href: '/solutions/ui-ux-design',
+    icon: DocumentChartBarIcon,
+  },
+  {
+    name: 'Progressive Web Applications (PWAs)',
+    description: 'Creating fast, engaging PWAs for a superior offline and online experience.',
+    href: '/solutions/progressive-web-applications',
+    icon: DocumentChartBarIcon,
+  },
+  {
+    name: 'Ecommerce Development',
+    description: 'Developing comprehensive eCommerce platforms for online retail success.',
+    href: '/solutions/ecommerce-development',
+    icon: DocumentChartBarIcon,
+  },
+  {
+    name: 'HubSpot Development',
+    description: 'Integrating and customizing HubSpot for optimized marketing and sales.',
+    href: '/solutions/hubspot-development',
+    icon: DocumentChartBarIcon,
+  },
+  {
+    name: 'Custom WordPress Development',
+    description: 'Tailoring WordPress sites for unique, functional, and aesthetic needs.',
+    href: '/solutions/custom-wordpress-development',
     icon: DocumentChartBarIcon,
   },
 ]
@@ -79,7 +167,13 @@ const Header = () => {
         <div className="flex lg:flex-1">
           <a href="#" className="-m-1.5 p-1.5">
             <span className="sr-only">Empuls3</span>
-            <img className="h-8 w-auto" src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600" alt="" />
+            <Image
+              src="./images/emp-logo.svg"
+              alt="Empuls3 Logo"
+              width={40}
+              height={40}
+              className='h-10 w-auto sm:h-10'
+            />
           </a>
         </div>
         <div className="flex lg:hidden">
@@ -116,7 +210,7 @@ const Header = () => {
               <Popover.Panel className="absolute left-1/2 z-10 mt-5 flex w-screen max-w-min -translate-x-1/2 px-4">
                 <div className="w-56 shrink rounded-xl bg-white p-4 text-sm font-semibold leading-6 text-gray-900 shadow-lg ring-1 ring-gray-900/5">
                   {company.map((item) => (
-                    <a key={item.name} href={item.href} className="block p-2 hover:text-indigo-600">
+                    <a key={item.name} href={item.href} className="block p-2 hover:text-em-purple">
                       {item.name}
                     </a>
                   ))}
@@ -146,7 +240,7 @@ const Header = () => {
                   {solutions.map((item) => (
                     <div key={item.name} className="group relative flex gap-x-6 rounded-lg p-4 hover:bg-gray-50">
                       <div className="mt-1 flex h-11 w-11 flex-none items-center justify-center rounded-lg bg-gray-50 group-hover:bg-white">
-                        <item.icon className="h-6 w-6 text-gray-600 group-hover:text-indigo-600" aria-hidden="true" />
+                        <item.icon className="h-6 w-6 text-gray-600 group-hover:text-emp-pink" aria-hidden="true" />
                       </div>
                       <div>
                         <a href={item.href} className="font-semibold text-gray-900">
@@ -157,15 +251,6 @@ const Header = () => {
                       </div>
                     </div>
                   ))}
-                </div>
-                <div className="bg-gray-50 px-8 py-6">
-                  <div className="flex items-center gap-x-3">
-                    <h3 className="text-sm font-semibold leading-6 text-gray-900">Enterprise</h3>
-                    <p className="rounded-full bg-indigo-600/10 px-2.5 py-1.5 text-xs font-semibold text-indigo-600">New</p>
-                  </div>
-                  <p className="mt-2 text-sm leading-6 text-gray-600">
-                    Empower your entire team with even more advanced tools.
-                  </p>
                 </div>
               </div>
             </Popover.Panel>
@@ -214,7 +299,7 @@ const Header = () => {
                       href={item.href}
                       className="flex items-center justify-center gap-x-2.5 p-3 text-sm font-semibold leading-6 text-gray-900 hover:bg-gray-100"
                     >
-                      <item.icon className="h-5 w-5 flex-none text-gray-400" aria-hidden="true" />
+                      <item.icon className="h-5 w-5 flex-none text-em-pink" aria-hidden="true" />
                       {item.name}
                     </a>
                   ))}
@@ -237,9 +322,9 @@ const Header = () => {
         <div className="hidden lg:flex lg:flex-1 lg:justify-end">
           <a
             href="#"
-            className="rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+            className="rounded-md bg-em-pink px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-em-purple focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
           >
-            Sign up
+            Get A Quote
           </a>
         </div>
       </nav>
@@ -249,11 +334,13 @@ const Header = () => {
           <div className="flex items-center justify-between">
             <a href="#" className="-m-1.5 p-1.5">
               <span className="sr-only">Your Company</span>
-              <img
-                className="h-8 w-auto"
-                src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600"
-                alt=""
-              />
+              <Image
+              src="./images/emp-logo.svg"
+              alt="Empuls3 Logo"
+              width={40}
+              height={40}
+              className='h-10 w-auto sm:h-10'
+            />
             </a>
             <button
               type="button"
@@ -267,7 +354,7 @@ const Header = () => {
           <div className="mt-6 flow-root">
             <div className="-my-6 divide-y divide-gray-500/10">
               <div className="space-y-2 py-6">
-              <a
+                <a
                   href="/"
                   className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
                 >
@@ -373,7 +460,7 @@ const Header = () => {
               <div className="py-6">
               <a
               href="#"
-              className="rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+              className="rounded-md bg-em-pink px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-emp-purple focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emp-pink"
             >
               Sign up
             </a>

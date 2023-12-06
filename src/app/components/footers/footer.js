@@ -3,23 +3,21 @@ import React from 'react';
 
 const navigation = {
     solutions: [
-      { name: 'Marketing', href: '#' },
-      { name: 'Analytics', href: '#' },
-      { name: 'Commerce', href: '#' },
-      { name: 'Insights', href: '#' },
+      { name: 'Custom WordPress Development', href: '/solutions/custom-wordpress-development' },
+      { name: 'Full-stack Development', href: '/solutions/full-stack-development' },
+      { name: 'Ecommerce Development', href: '/solutions/ecommerce-development' },
+      { name: 'View More', href: '/solutions/solutions-overview' },
     ],
-    support: [
-      { name: 'Pricing', href: '#' },
-      { name: 'Documentation', href: '#' },
-      { name: 'Guides', href: '#' },
-      { name: 'API Status', href: '#' },
+    services: [
+      { name: 'IT consulting', href: '/services/it-consulting' },
+      { name: 'Maintenance & Support', href: '/services/maintenance-and-support' },
+      { name: 'Quality assurance &amp; Testesting', href: '/services/quality-assurance-and-testing' },
+      { name: 'And More', href: '/services/services-overview' },
     ],
     company: [
-      { name: 'About', href: '#' },
-      { name: 'Blog', href: '#' },
-      { name: 'Jobs', href: '#' },
-      { name: 'Press', href: '#' },
-      { name: 'Partners', href: '#' },
+      { name: 'About Us', href: '/compamy/about-us' },
+      { name: 'Approach', href: '/company/approach' },
+      { name: 'Partnership', href: '/company/partnership' },
     ],
     legal: [
       { name: 'Claim', href: '#' },
@@ -108,7 +106,7 @@ const Footer = () => {
               alt="Company name"
             />
             <p className="text-sm leading-6 text-gray-300">
-              Making the world a better place through constructing elegant hierarchies.
+            Where innovation meets reliability. Delivering bespoke web solutions that drive growth and redefine digital experiences.
             </p>
             <div className="flex space-x-6">
               {navigation.social.map((item) => (
@@ -122,7 +120,7 @@ const Footer = () => {
           <div className="mt-16 grid grid-cols-2 gap-8 xl:col-span-2 xl:mt-0">
             <div className="md:grid md:grid-cols-2 md:gap-8">
               <div>
-                <h3 className="text-sm font-semibold leading-6 text-white">Solutions</h3>
+                <h3 className="text-md font-semibold leading-6 text-white">Solutions</h3>
                 <ul role="list" className="mt-6 space-y-4">
                   {navigation.solutions.map((item) => (
                     <li key={item.name}>
@@ -134,9 +132,9 @@ const Footer = () => {
                 </ul>
               </div>
               <div className="mt-10 md:mt-0">
-                <h3 className="text-sm font-semibold leading-6 text-white">Support</h3>
+                <h3 className="text-md font-semibold leading-6 text-white">Services</h3>
                 <ul role="list" className="mt-6 space-y-4">
-                  {navigation.support.map((item) => (
+                  {navigation.services.map((item) => (
                     <li key={item.name}>
                       <a href={item.href} className="text-sm leading-6 text-gray-300 hover:text-white">
                         {item.name}
@@ -148,7 +146,7 @@ const Footer = () => {
             </div>
             <div className="md:grid md:grid-cols-2 md:gap-8">
               <div>
-                <h3 className="text-sm font-semibold leading-6 text-white">Company</h3>
+                <h3 className="text-md font-semibold leading-6 text-white">Company</h3>
                 <ul role="list" className="mt-6 space-y-4">
                   {navigation.company.map((item) => (
                     <li key={item.name}>
@@ -160,7 +158,7 @@ const Footer = () => {
                 </ul>
               </div>
               <div className="mt-10 md:mt-0">
-                <h3 className="text-sm font-semibold leading-6 text-white">Legal</h3>
+                <h3 className="text-md font-semibold leading-6 text-white">Legal</h3>
                 <ul role="list" className="mt-6 space-y-4">
                   {navigation.legal.map((item) => (
                     <li key={item.name}>
