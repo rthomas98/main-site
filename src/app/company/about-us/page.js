@@ -1,3 +1,9 @@
+import AboutFAQs from "@/app/components/about/AboutFAQs"
+import AboutHero from "@/app/components/about/AboutHero"
+import OurStory from "@/app/components/about/OurStory"
+import LightCTA from "@/app/components/global/LightCTA"
+import OurTeam from "@/app/components/global/OurTeam"
+import SplitContact from "@/app/components/global/SplitContact"
 
 export const metadata = {
     title: 'About us',
@@ -6,6 +12,11 @@ export const metadata = {
 
 export default function Page() {
     return <main>
-        <h1>Hello, About us Page!</h1>
+        <AboutHero  />
+        <OurStory />
+        <OurTeam />
+        <LightCTA />
+        <AboutFAQs />
+        <SplitContact />
     </main>
   }
