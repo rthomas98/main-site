@@ -1,5 +1,7 @@
+import LightCTA from "../components/global/LightCTA"
 import OurWorkGallery from "../components/our-work/OurWorkGallery"
 import OurWorkHero from "../components/our-work/OurWorkHero"
+import OurWorkServices from "../components/our-work/OurWorkServices"
 
 export const metadata = {
     title: 'Our Work',
@@ -10,5 +12,7 @@ export default function Page() {
     return <main>
         <OurWorkHero />
         <OurWorkGallery />
+        <OurWorkServices />
+        <LightCTA />
     </main>
   }
