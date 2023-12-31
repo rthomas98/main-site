@@ -1,29 +1,33 @@
 "use client";
 
 import React from "react";
-import { InboxIcon, TrashIcon, UsersIcon } from "@heroicons/react/24/outline";
+import {
+  BuildingLibraryIcon,
+  CodeBracketIcon,
+  CommandLineIcon,
+} from "@heroicons/react/20/solid";
 
 const features = [
   {
-    name: "Unlimited inboxes",
+    name: "Tailored Services for Every Digital Challenge",
     description:
-      "Non quo aperiam repellendus quas est est. Eos aut dolore aut ut sit nesciunt. Ex tempora quia. Sit nobis consequatur dolores incidunt.",
-    href: "#",
-    icon: InboxIcon,
+      "Empuls3 offers a spectrum of digital services, from custom software development to innovative UI/UX design, tailored for your success.",
+    href: "/services/services-overview",
+    icon: CodeBracketIcon,
   },
   {
-    name: "Manage team members",
+    name: "Innovative Solutions for Modern Business Needs",
     description:
-      "Vero eum voluptatem aliquid nostrum voluptatem. Vitae esse natus. Earum nihil deserunt eos quasi cupiditate. A inventore et molestiae natus.",
-    href: "#",
-    icon: UsersIcon,
+      "Empuls3 delivers cutting-edge solutions, from robust web applications to efficient cloud integrations, driving your business forward.",
+    href: "solutions/solutions-overview",
+    icon: BuildingLibraryIcon,
   },
   {
-    name: "Spam report",
+    name: "Advancing with Technology & Innovation",
     description:
-      "Et quod quaerat dolorem quaerat architecto aliquam accusantium. Ex adipisci et doloremque autem quia quam. Quis eos molestiae at iure impedit.",
+      "Empuls3 stays at the forefront of technological advancements, integrating the latest innovations to deliver solutions that not only meet but exceed current and future demands.",
     href: "#",
-    icon: TrashIcon,
+    icon: CommandLineIcon,
   },
 ];
 
@@ -75,11 +79,13 @@ function HomeSolutions() {
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="mx-auto max-w-2xl lg:mx-0">
             <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
-              Stay on top of customer support
+              Comprehensive Solutions Tailored for Your Success
             </h2>
             <p className="mt-6 text-lg leading-8 text-gray-600">
-              Lorem ipsum dolor sit amet consect adipisicing elit. Possimus
-              magnam voluptatum cupiditate veritatis in accusamus quisquam.
+              Explore our wide array of services and solutions, meticulously
+              designed to cater to your diverse digital needs. From innovative
+              web development to advanced mobile applications, Empuls3 is
+              dedicated to elevating your business in the digital world.
             </p>
           </div>
           <div className="mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-none">
@@ -87,7 +93,7 @@ function HomeSolutions() {
               {features.map((feature) => (
                 <div key={feature.name} className="flex flex-col">
                   <dt className="text-base font-semibold leading-7 text-gray-900">
-                    <div className="mb-6 flex h-10 w-10 items-center justify-center rounded-lg bg-indigo-600">
+                    <div className="mb-6 flex h-10 w-10 items-center justify-center rounded-lg bg-em-pink">
                       <feature.icon
                         className="h-6 w-6 text-white"
                         aria-hidden="true"
@@ -100,7 +106,7 @@ function HomeSolutions() {
                     <p className="mt-6">
                       <a
                         href={feature.href}
-                        className="text-sm font-semibold leading-6 text-indigo-600"
+                        className="text-sm font-semibold leading-6 text-em-purple hover:text-em-pink"
                       >
                         Learn more <span aria-hidden="true">→</span>
                       </a>

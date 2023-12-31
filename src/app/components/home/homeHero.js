@@ -76,7 +76,7 @@ const HomeHero = () => {
                       href="/contact"
                       className="text-sm font-semibold leading-6 text-gray-900"
                     >
-                      Start Your Project <span aria-hidden="true">→</span>
+                      Live demo <span aria-hidden="true">→</span>
                     </a>
                   </div>
                 </div>
